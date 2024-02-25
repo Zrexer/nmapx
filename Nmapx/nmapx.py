@@ -482,7 +482,7 @@ if "-h" in lis or "--help" in lis:
         printer(console_commands_dict)
     
     elif "--list" in lis:
-        print(JsonRipper(console_commands_list).parse())
+        printer(JsonRipper(console_commands_list).parse())
     
     else:
         printer(console_commands_dict)
