@@ -556,7 +556,7 @@ if len(quickTrace) == 1:
     elif 'error' in datax.keys() and datax['error'] == False:
         data = eval(open("path_saver.json", 'r').read())
         if not quickTrace[0] == "Null":
-            printer(Nmapx(datax['nmap_path']).quickTraceout(quickTrace[0]))
+            printer(Nmapx(data['nmap_path']).quickTraceout(quickTrace[0]))
             
         else:
             printer("Cannot be Empty: \"-qto <HOSTNAME>\"")
