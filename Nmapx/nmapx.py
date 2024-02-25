@@ -570,7 +570,7 @@ if len(quickS) == 1:
     elif 'error' in datax.keys() and datax['error'] == False:
         data = eval(open("path_saver.json", 'r').read())
         if not quickS[0] == "Null":
-            Nmapx(datax['nmap_path']).quickScan(quickS[0])
+            Nmapx(data['nmap_path']).quickScan(quickS[0])
     
         else:
             printer("Cannot be Empty: \"-qs <HOSTNAME>\"")
@@ -584,7 +584,7 @@ if len(quickSP) == 1:
     elif 'error' in datax.keys() and datax['error'] == False:
         data = eval(open("path_saver.json", 'r').read())
         if not quickSP[0] == "Null":
-            Nmapx(datax['nmap_path']).quickScanPlus(quickSP[0])
+            Nmapx(data['nmap_path']).quickScanPlus(quickSP[0])
         
         else:
             printer("Cannot be Empty: \"-qsp <HOSTNAME>\"")
@@ -598,7 +598,7 @@ if len(pingS) == 1:
     elif 'error' in datax.keys() and datax['error'] == False:
         data = eval(open("path_saver.json", 'r').read())
         if not pingS[0] == "Null":
-            Nmapx(datax['nmap_path']).pingScan(pingS[0])
+            Nmapx(data['nmap_path']).pingScan(pingS[0])
         
         else:
             printer("Cannot be Empty: \"-ps <HOSTNAME>\"")
@@ -612,7 +612,7 @@ if len(intenseS) == 1:
     elif 'error' in datax.keys() and datax['error'] == False:
         data = eval(open("path_saver.json", 'r').read())
         if not intenseS[0] == "Null":
-            Nmapx(datax['nmap_path']).intenseScan(intenseS[0])
+            Nmapx(data['nmap_path']).intenseScan(intenseS[0])
         
         else:
             printer("Cannot be Empty: \"--ins <HOSTNAME>\"")
@@ -626,7 +626,7 @@ if len(intenseSNP) == 1:
     elif 'error' in datax.keys() and datax['error'] == False:
         data = eval(open("path_saver.json", 'r').read())
         if not intenseSNP[0] == "Null":
-            Nmapx(datax['nmap_path']).intenseScan_noping(intenseSNP[0])
+            Nmapx(data['nmap_path']).intenseScan_noping(intenseSNP[0])
         
         else:
             printer("Cannot be Empty: \"--ins-np <HOSTNAME>\"")
@@ -640,7 +640,7 @@ if len(intenseSTCP) == 1:
     elif 'error' in datax.keys() and datax['error'] == False:
         data = eval(open("path_saver.json", 'r').read())
         if not intenseSTCP[0] == "Null":
-            Nmapx(datax['nmap_path']).intenseScan_allTcpPorts(intenseSTCP[0])
+            Nmapx(data['nmap_path']).intenseScan_allTcpPorts(intenseSTCP[0])
         
         else:
             printer("Cannot be Empty: \"--ins-tcp <HOSTNAME>\"")
@@ -654,7 +654,7 @@ if len(intenseSUDP) == 1:
     elif 'error' in datax.keys() and datax['error'] == False:
         data = eval(open("path_saver.json", 'r').read())
         if not intenseSUDP[0] == "Null":
-            Nmapx(datax['nmap_path']).intenseScan_UDP(intenseSUDP[0])
+            Nmapx(data['nmap_path']).intenseScan_UDP(intenseSUDP[0])
         
         else:
             printer("Cannot be Empty: \"--ins-udp <HOSTNAME>\"")
