@@ -4,7 +4,9 @@ from rich import print as printer
 import os
 import sys
 import json
+import platform
 import time
+import dls
 
 # For Buffer Argv
 commands: dict = {}
@@ -450,9 +452,10 @@ intenseS = BufferConsole().addFlag("--ins")
 intenseSNP = BufferConsole().addFlag("--ins-np")
 intenseSTCP = BufferConsole().addFlag("--ins-tcp")
 intenseSUDP = BufferConsole().addFlag("--ins-udp")
+dl = BufferConsole().addFlag("--dls")
 
 # All Available Commands => Variable
-console_commands_list = [["-h", "--help"], "--set", "--check-set", "-r", "-compre", "-qto", "-qs", "-qsp", "-ps", "--ins", "--ins-np", "--ins-tcp", "--ins-udp"]
+console_commands_list = [["-h", "--help"], "--set", "--check-set", "-r", "-compre", "-qto", "-qs", "-qsp", "-ps", "--ins", "--ins-np", "--ins-tcp", "--ins-udp", "--dls"]
 
 console_commands_dict = {
     "-h / --help" : "Show This Message",
@@ -467,13 +470,13 @@ console_commands_dict = {
     "--ins" : "Intense Scan",
     "--ins-np" : "Intense Scan No Ping",
     "--ins-tcp" : "Intense Scan all TCP Ports",
-    "--ins-udp" : "Intense Scan UDP Ports"
+    "--ins-udp" : "Intense Scan UDP Ports",
+    "--dls" : "Download the nmap"
 }
 
-# Argv
 lis = sys.argv
 
-# Start the Commandline part
+
 if "-h" in lis or "--help" in lis:
     if "--dict" in lis:
         printer(console_commands_dict)
@@ -655,3 +658,19 @@ if len(intenseSUDP) == 1:
         
         else:
             printer("Cannot be Empty: \"--ins-udp <HOSTNAME>\"")
+
+if len(dl) == 1:
+    oss = ["Windows", "Linux", "Darwin"]
+    if dl[0] in oss:
+        if dl[0] == "Windows":printer("Download For \"Windows\"");dls.DownloaderStream().nmap("Windows")
+        elif dl[0] == "Linux":printer("Download For \"Linux\"");dls.DownloaderStream().nmap("Linux")
+        elif dl[0] == "Darwin":printer("Download For \"Darwin\"");dls.DownloaderStream().nmap("Darwin")
+    
+    elif dl[0] == "--scan":
+        printer(f"Your OS: \"{platform.system()}\"")
+        dls.DownloaderStream().nmap()
+
+    else:
+        printer("Cannot get the OS")
+        printer("Countinue with \"Windows\"")
+        dls.DownloaderStream().nmap("Windows")
