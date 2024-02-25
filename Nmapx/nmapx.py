@@ -116,7 +116,7 @@ class Nmapx(object):
     # For Check Requirements with Dictionary Output
     # If you Use Nmapx as Library, 'raiser' parameter should be True => default is true
 
-    result = nmap.__check_exists__(raiser = False)
+    result = nmapx.__check_exists__(raiser = False)
     
     if result['error'] == True:
         print(f"Error Detected: {result['base']}")
