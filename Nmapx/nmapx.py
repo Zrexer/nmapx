@@ -462,7 +462,7 @@ console_commands_dict = {
     "--set" : "For Set the Path of Nmap Binary File and Save in a File",
     "--check-set" : "For Check the Exists file for Path of Nmap Binary File",
     "-r" : "regular scan",
-    "--compre" : "Compre Scan",
+    "--compre" : "Comprehensive Scan",
     "-qto" : "Quick Traceout Scan",
     "-qs" : "Quick Scan",
     "-qsp" : "Quick Scan Plus",
